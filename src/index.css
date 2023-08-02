@@ -28,3 +28,7 @@ code {
   margin: 0 auto;
   display: block;
 }
+
+h1 {
+  font-size: 20px !important;
+}
