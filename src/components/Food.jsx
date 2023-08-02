@@ -13,9 +13,27 @@ function Food({ food }) {
       <div className='flex-container'>
         <div className='w-100'>
           <p>Variants</p>
+          <select>
+            {food.variants.map((variant) => {
+              return (
+                <option value={variant} key={variant}>
+                  {variant}
+                </option>
+              );
+            })}
+          </select>
         </div>
         <div className='w-100'>
-          <p>Prices</p>
+          <p>Quantity</p>
+          <select>
+            {[...Array(10).keys()].map((x, i) => {
+              return (
+                <option value={i + 1} key={i}>
+                  {i + 1}
+                </option>
+              );
+            })}
+          </select>
         </div>
       </div>
     </div>

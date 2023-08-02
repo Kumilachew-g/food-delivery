@@ -1,7 +1,7 @@
 const food = [
   {
     name: 'PEPPER BARBECUE CHICKEN',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 200,
@@ -15,7 +15,7 @@ const food = [
   },
   {
     name: 'Non Veg Supreme',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 200,
@@ -30,7 +30,7 @@ const food = [
   },
   {
     name: 'Golden Corn Pizza',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 180,
@@ -45,7 +45,7 @@ const food = [
   },
   {
     name: 'Jalapeno & Red Paprika Pizza',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 200,
@@ -60,7 +60,7 @@ const food = [
   },
   {
     name: 'Margerita',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 150,
@@ -76,7 +76,7 @@ const food = [
   },
   {
     name: 'Double Cheese Margherita Pizza',
-    varients: ['small', 'medium', 'large'],
+    variants: ['small', 'medium', 'large'],
     prices: [
       {
         small: 250,

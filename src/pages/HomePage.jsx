@@ -6,9 +6,9 @@ function HomePage() {
   return (
     <div>
       <div className='row'>
-        {food.map((food) => {
+        {food.map((food, i) => {
           return (
-            <div className='col-md-4'>
+            <div className='col-md-4' key={i}>
               <div>
                 <Food food={food} />
               </div>
