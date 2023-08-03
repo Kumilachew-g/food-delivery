@@ -15,7 +15,7 @@ const food = [
     description: 'Pepper Barbecue Chicken I Cheese',
   },
   {
-    name: 'Non Veg Supreme',
+    name: 'Doro Wot',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -24,11 +24,11 @@ const food = [
         large: 400,
       },
     ],
-    category: 'nonveg',
+    category: 'Siga',
     image:
       'https://media.cnn.com/api/v1/images/stellar/prod/190205171048-doro-wot.jpg?q=w_1600,h_900,x_0,y_0,c_fill/h_618',
     description:
-      'Bite into supreme delight of Black Olives, Onions, Grilled Mushrooms, Pepper BBQ Chicken, Peri-Peri Chicken, Grilled Chicken Rashers',
+      'Doro wot is a spicy chicken stew that is often served with injera and a variety of vegetables and/or salad.',
   },
   {
     name: 'Skekla Tibs',
@@ -40,7 +40,7 @@ const food = [
         large: 360,
       },
     ],
-    category: 'veg',
+    category: 'Siga',
     description:
       'Shekla tibs is a dish of marinated lamb, beef or goat meat sautéed with onions, garlic, rosemary and other spices. It is served with injera and a variety of vegetables and/or salad.',
     image:
@@ -56,7 +56,7 @@ const food = [
         large: 420,
       },
     ],
-    category: 'veg',
+    category: 'Kurt',
     image: 'https://i.ytimg.com/vi/_bITPxaYrH0/maxresdefault.jpg',
     description:
       'Siga kurt is a raw beef dish that is served with a spicy chili powder called mitmita and a type of clarified butter called niter kibbeh. It is often served with injera and a variety of vegetables and/or salad.',
@@ -71,7 +71,7 @@ const food = [
         large: 300,
       },
     ],
-    category: 'veg',
+    category: 'Tegabino',
     image:
       'https://genevainethiopia.files.wordpress.com/2015/03/p1050882.jpg?w=353&h=265',
     description:
@@ -87,7 +87,7 @@ const food = [
         large: 500,
       },
     ],
-    category: 'veg',
+    category: 'Siga',
     image:
       'https://theethiopianfood.com/wp-content/uploads/Doro-Wot-1-1-1-1.jpg',
     description:
