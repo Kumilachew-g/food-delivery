@@ -21,3 +21,41 @@ code {
 .navbar-brand {
   color: black !important;
 }
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+}
+
+h1 {
+  font-size: 20px !important;
+}
+
+.flex-container {
+  display: flex !important;
+}
+
+.btn {
+  background-color: red !important;
+  color: white !important;
+}
+
+.btn:hover {
+  background-color: #cf4e4e !important;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+select {
+  box-shadow: none !important;
+  border-color: black !important;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+/* Remove scrollbar in firefox */
+html {
+  scrollbar-width: none;
+}
