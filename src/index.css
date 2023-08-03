@@ -51,3 +51,11 @@ select {
   box-shadow: none !important;
   border-color: black !important;
 }
+
+html::-webkit-scrollbar {
+  display: none;
+}
+/* Remove scrollbar in firefox */
+html {
+  scrollbar-width: none;
+}
