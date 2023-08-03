@@ -1,6 +1,6 @@
 const food = [
   {
-    name: 'PEPPER BARBECUE CHICKEN',
+    name: 'Beysaynetu',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -9,8 +9,9 @@ const food = [
         large: 400,
       },
     ],
-    category: 'nonveg',
-    image: 'https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg',
+    category: 'Beyaynetu',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs9T8fSAUAyRlEPr5MNK8KDR8_c-KKn4cAbyi7hkhYT-cJKAevybQEudPb6mGUDq_S_bM&usqp=CAU',
     description: 'Pepper Barbecue Chicken I Cheese',
   },
   {
@@ -24,12 +25,13 @@ const food = [
       },
     ],
     category: 'nonveg',
-    image: 'https://www.dominos.co.in/files/items/Non-Veg_Supreme.jpg',
+    image:
+      'https://media.cnn.com/api/v1/images/stellar/prod/190205171048-doro-wot.jpg?q=w_1600,h_900,x_0,y_0,c_fill/h_618',
     description:
       'Bite into supreme delight of Black Olives, Onions, Grilled Mushrooms, Pepper BBQ Chicken, Peri-Peri Chicken, Grilled Chicken Rashers',
   },
   {
-    name: 'Golden Corn Pizza',
+    name: 'Skekla Tibs',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -40,11 +42,12 @@ const food = [
     ],
     category: 'veg',
     description:
-      'Corn over the base makes it look beautiful. It is served with tomato sauce and chili flakes are sprinkled over the topping according the taste. After mixing all the ingredients, it is baked by adding cheese and corn for added flavor to pizza. Corn adds health and sweet taste to the pizza.',
-    image: 'https://www.crazymasalafood.com/wp-content/images/golden-1.jpg',
+      'Shekla tibs is a dish of marinated lamb, beef or goat meat sautéed with onions, garlic, rosemary and other spices. It is served with injera and a variety of vegetables and/or salad.',
+    image:
+      'https://img.freepik.com/free-photo/vertical-shot-delicious-ethiopian-food-with-fresh-vegetables-wooden-table_181624-32889.jpg?w=2000',
   },
   {
-    name: 'Jalapeno & Red Paprika Pizza',
+    name: 'Sigga Kurt',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -54,12 +57,12 @@ const food = [
       },
     ],
     category: 'veg',
-    image: 'https://www.crazymasalafood.com/wp-content/images/jalepeno.jpg',
+    image: 'https://i.ytimg.com/vi/_bITPxaYrH0/maxresdefault.jpg',
     description:
-      'This pizza is amazing and can become more delicious if we will add some more cheese in it. Ingredients are yeast, sugar, olive oil, salt, and all-purpose flour in a big bowl. After mixing all the ingredients, it is baked by adding Jalapeno and Paprika with corns over the cheese layer. The base is made crunchy to give it best taste. It can be made more tasty by sprinkling chili flakes and Oregano as per the taste.',
+      'Siga kurt is a raw beef dish that is served with a spicy chili powder called mitmita and a type of clarified butter called niter kibbeh. It is often served with injera and a variety of vegetables and/or salad.',
   },
   {
-    name: 'Margerita',
+    name: 'Tegabino Shiro',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -70,12 +73,12 @@ const food = [
     ],
     category: 'veg',
     image:
-      'https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-500x500.jpg',
+      'https://genevainethiopia.files.wordpress.com/2015/03/p1050882.jpg?w=353&h=265',
     description:
-      'The pizza base is made by mixing yeast, sugar, olive oil, salt, and all-purpose flour in a big bowl. After mixing all the ingredients, it is baked by adding the cheese as topping over it. The base is perfectly prepared by adding single layer of cheese over it. It is mouth-watering pizza for cheese lovers.',
+      'Tegabino shiro is a chickpea stew that is often served with injera and a variety of vegetables and/or salad.',
   },
   {
-    name: 'Double Cheese Margherita Pizza',
+    name: 'Dooro wot',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
@@ -85,9 +88,10 @@ const food = [
       },
     ],
     category: 'veg',
-    image: 'https://www.crazymasalafood.com/wp-content/images/double-1.jpg',
+    image:
+      'https://theethiopianfood.com/wp-content/uploads/Doro-Wot-1-1-1-1.jpg',
     description:
-      'This is a plain pizza which have cheese on it which is margherita and is delicious because of the loads of cheese. After mixing all the ingredients, it is baked by adding the cheese as topping over it. The base is perfectly prepared by adding double layer of cheese over it',
+      'Doro wot is a spicy chicken stew that is often served with injera and a variety of vegetables and/or salad.',
   },
 ];
 export default food;
