@@ -1,20 +1,31 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 
 function Food({ food }) {
   const [variant, setVariant] = useState('small');
   const [quantity, setQuantity] = useState(1);
+
+  // Modal state
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div
       style={{ margin: '60px' }}
       className='shadow-lg p-3 mb-5 bg-white rounded'
     >
-      <h1>{food.name}</h1>
-      <img
-        src={food.image}
-        className='img-fluid'
-        style={{ height: '200px', width: '200px' }}
-      />
+      <div onClick={handleShow}>
+        {' '}
+        <h1>{food.name}</h1>
+        <img
+          src={food.image}
+          className='img-fluid'
+          style={{ height: '200px', width: '200px' }}
+        />
+      </div>
       <div className='flex-container'>
         <div className='w-100 m-1'>
           <p>Variants</p>
@@ -63,6 +74,29 @@ function Food({ food }) {
           <button className='btn'>Add To Cart</button>
         </div>
       </div>
+
+      {/*  modal */}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{food.name}</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <img
+            src={food.image}
+            style={{ height: '400px' }}
+            className='img-fluid'
+          />
+          <p>{food.description}</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <button className='btn' onClick={handleClose}>
+            CLOSE
+          </button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
