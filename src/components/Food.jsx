@@ -79,7 +79,7 @@ function Food({ food }) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>{food.name}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
