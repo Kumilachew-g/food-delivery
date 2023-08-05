@@ -83,7 +83,12 @@ function Food({ food }) {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Modal body text goes here.</p>
+          <img
+            src={food.image}
+            style={{ height: '400px' }}
+            className='img-fluid'
+          />
+          <p>{food.description}</p>
         </Modal.Body>
 
         <Modal.Footer>
