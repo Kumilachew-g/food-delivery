@@ -85,7 +85,7 @@ function Food({ food }) {
         <Modal.Body>
           <img
             src={food.image}
-            style={{ height: '400px' }}
+            style={{ height: '400px', marginBottom: '10px' }}
             className='img-fluid'
           />
           <p>{food.description}</p>
