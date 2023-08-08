@@ -22,7 +22,7 @@ function Food({ food }) {
         <h1>{food.name}</h1>
         <img
           src={food.image}
-          className='img-fluid'
+          className='img-fluid img'
           style={{ height: '200px', width: '200px' }}
         />
       </div>
