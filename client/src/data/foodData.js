@@ -12,7 +12,7 @@ const food = [
     category: 'Beyaynetu',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs9T8fSAUAyRlEPr5MNK8KDR8_c-KKn4cAbyi7hkhYT-cJKAevybQEudPb6mGUDq_S_bM&usqp=CAU',
-    description: 'Pepper Barbecue Chicken I Cheese',
+    description: 'Beysaynetu is a combination of several vegetarian dishes.',
   },
   {
     name: 'Doro Wot',
@@ -31,7 +31,7 @@ const food = [
       'Doro wot is a spicy chicken stew that is often served with injera and a variety of vegetables and/or salad.',
   },
   {
-    name: 'Skekla Tibs',
+    name: 'Shekla Tibs',
     variants: ['small', 'medium', 'large'],
     prices: [
       {
