@@ -10,14 +10,24 @@ app.get('/', (req, res) => {
   res.send('Server is up and running 🔥');
 });
 
-app.get('/api/foods', (req, res) => {
-  food.find({}, (err, docs) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(docs);
-    }
-  });
+// app.get('/api/foods', async (req, res) => {
+//   await food
+//     .find({})
+//     .then((foods) => {
+//       res.send(foods);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
+
+app.get('/foods', async (req, res) => {
+  try {
+    const foods = await food.find({});
+    res.send(foods);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 const port = process.env.PORT || 5000;
