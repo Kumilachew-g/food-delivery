@@ -5,8 +5,8 @@ export const getAllFood = () => (dispatch) => {
   try {
     const response = axios.get('/api/food/getfood');
     console.log(response);
-    dispatch({ type: 'GET_FOOD_SUCCESS' });
+    dispatch({ type: 'GET_FOOD_SUCCESS', payload: response.data });
   } catch (error) {
-    dispatch({ type: 'GET_FOOD_FAILURE' });
+    dispatch({ type: 'GET_FOOD_FAILURE', payload: error });
   }
 };
