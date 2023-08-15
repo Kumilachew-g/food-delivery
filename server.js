@@ -6,6 +6,9 @@ const app = express();
 const db = require('./db');
 app.use(express.json());
 
+const foodRouter = require('./routes/foodRoute');
+app.use('/api/foods', foodRouter);
+
 app.get('/', (req, res) => {
   res.send('Server is up and running 🔥');
 });
@@ -21,14 +24,14 @@ app.get('/', (req, res) => {
 //     });
 // });
 
-app.get('/foods', async (req, res) => {
-  try {
-    const foods = await food.find({});
-    res.send(foods);
-  } catch (err) {
-    console.log(err);
-  }
-});
+// app.get('/foods', async (req, res) => {
+//   try {
+//     const foods = await food.find({});
+//     res.send(foods);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
 
 const port = process.env.PORT || 5000;
 

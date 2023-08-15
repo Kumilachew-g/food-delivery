@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import food from '../data/foodData';
 import Food from '../components/Food';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllFood } from '../redux/actions/foodActions';
 
 function HomePage() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllFood());
+  }, [dispatch]);
   return (
     <div>
       <div className='row'>
