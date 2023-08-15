@@ -3,10 +3,10 @@ const router = express.Router();
 
 const food = require('../models/foodModel');
 
-router.get('/', async (req, res) => {
+router.get('/getallfoods', async (req, res) => {
   try {
-    const food = await food.find();
-    res.send(food);
+    const foods = await food.find({});
+    res.send(foods);
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
