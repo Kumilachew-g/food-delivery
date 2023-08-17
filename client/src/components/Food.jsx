@@ -36,7 +36,7 @@ function Food({ food }) {
               setVariant(e.target.value);
             }}
           >
-            {food.variants.map((variant) => {
+            {food.varients.map((variant) => {
               return (
                 <option value={variant} key={variant}>
                   {variant}
