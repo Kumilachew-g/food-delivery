@@ -6,10 +6,10 @@ import thunk from 'redux-thunk';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { getAllFoodReducer } from './reducers/foodReducers';
+import { getAllFoodsReducer } from './reducers/foodReducers';
 
 const finalReducer = combineReducers({
-  getAllFoodReducer: getAllFoodReducer,
+  getAllFoodsReducer: getAllFoodsReducer,
 });
 
 const initialState = {};
