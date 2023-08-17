@@ -1,19 +1,19 @@
-export const getAllFoodReducer = (state = { foods: [] }, action) => {
+export const getAllFoodsReducer = (state = { foods: [] }, action) => {
   switch (action.type) {
-    case 'GET_FOOD_REQUEST':
+    case 'GET_FOODS_REQUEST':
       return {
-        payload: true,
+        loading: true,
         ...state,
       };
-    case 'GET_FOOD_SUCCESS':
+    case 'GET_FOODS_SUCCESS':
       return {
-        payload: false,
-        food: action.payload,
+        loading: false,
+        foods: action.payload,
       };
-    case 'GET_FOOD_FAILED':
+    case 'GET_FOODS_FAILED':
       return {
-        payload: false,
         error: action.payload,
+        loading: false,
       };
     default:
       return state;
