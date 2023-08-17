@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import food from '../data/foodData';
 import Food from '../components/Food';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllFood } from '../redux/actions/foodActions';
 
 function HomePage() {
   const dispatch = useDispatch();
+  const foodsstate = useSelector((state) => state.getAllFoodsReducer);
+  const { foods, loading, error } = foodsstate;
 
   useEffect(() => {
     dispatch(getAllFood());
@@ -13,15 +14,21 @@ function HomePage() {
   return (
     <div>
       <div className='row'>
-        {food.map((food, i) => {
-          return (
-            <div className='col-md-4' key={i}>
-              <div>
-                <Food food={food} />
+        {loading ? (
+          <h1>Loading...</h1>
+        ) : error ? (
+          <h1>Something went wrong</h1>
+        ) : (
+          foods.map((food, i) => {
+            return (
+              <div className='col-md-4' key={i}>
+                <div>
+                  <Food food={food} />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </div>
   );
