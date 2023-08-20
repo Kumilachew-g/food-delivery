@@ -13,7 +13,7 @@ function HomePage() {
   }, [dispatch]);
   return (
     <div>
-      <div className='row'>
+      <div className='row justify-content-center'>
         {loading ? (
           <h1>Loading...</h1>
         ) : error ? (
@@ -21,7 +21,7 @@ function HomePage() {
         ) : (
           foods.map((food, i) => {
             return (
-              <div className='col-md-4' key={i}>
+              <div className='col-md-3 m-3' key={i}>
                 <div>
                   <Food food={food} />
                 </div>
