@@ -12,6 +12,8 @@ function Food({ food }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const addToCart = () => {};
+
   return (
     <div className='shadow-lg p-3 mb-5 bg-white rounded'>
       <div onClick={handleShow}>
@@ -68,7 +70,9 @@ function Food({ food }) {
           </h1>
         </div>
         <div className='m-1 w-100'>
-          <button className='btn'>Add To Cart</button>
+          <button className='btn' onClick={addToCart}>
+            Add To Cart
+          </button>
         </div>
       </div>
 
