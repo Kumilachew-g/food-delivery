@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../redux/actions/cartActoins';
+import { addToCart } from '../redux/actions/cartActions';
 
 function Food({ food }) {
   const [variant, setVariant] = useState('small');
