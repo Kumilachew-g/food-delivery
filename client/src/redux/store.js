@@ -8,11 +8,21 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { getAllFoodsReducer } from './reducers/foodReducers';
 
+import { cartReducer } from './reducers/cartReducer';
+
 const finalReducer = combineReducers({
   getAllFoodsReducer: getAllFoodsReducer,
+  cartReducer: cartReducer,
 });
 
-const initialState = {};
+const cartItems = localStorage.getItem('cartItems')
+  ? JSON.parse(localStorage.getItem('cartItems'))
+  : [];
+const initialState = {
+  cartReducer: {
+    cartItems: cartItems,
+  },
+};
 
 const composeEnhancers = composeWithDevTools({});
 

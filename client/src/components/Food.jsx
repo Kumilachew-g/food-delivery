@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/actions/cartActions';
 
 function Food({ food }) {
   const [variant, setVariant] = useState('small');
@@ -11,6 +13,11 @@ function Food({ food }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
+
+  const addtocart = () => {
+    dispatch(addToCart(food, quantity, variant));
+  };
 
   return (
     <div className='shadow-lg p-3 mb-5 bg-white rounded'>
@@ -68,7 +75,9 @@ function Food({ food }) {
           </h1>
         </div>
         <div className='m-1 w-100'>
-          <button className='btn'>Add To Cart</button>
+          <button className='btn' onClick={addtocart}>
+            Add To Cart
+          </button>
         </div>
       </div>
 
