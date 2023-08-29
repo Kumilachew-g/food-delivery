@@ -20,6 +20,10 @@ function CartPage() {
                     Price:{item.price}*{item.prices[0][item.varient]}=
                     {item.price}
                   </h1>
+                  <h1>Quantity: </h1>
+                  <i class='fa-solid fa-plus'></i>
+                  <b>{item.quantity}</b>
+                  <i class='fa-solid fa-minus'></i>
                 </div>
                 <div></div>
                 <div></div>
