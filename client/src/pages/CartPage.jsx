@@ -13,7 +13,9 @@ function CartPage() {
             return (
               <div className='flex-container'>
                 <div>
-                  <h1>{item.name}</h1>
+                  <h1>
+                    {item.name} [{item.varient}]
+                  </h1>
                   <h1>
                     Price:{item.price}*{item.prices[0][item.varient]}=
                     {item.price}
