@@ -12,7 +12,7 @@ function CartPage() {
           {cartItems.map((item) => {
             return (
               <div className='flex-container'>
-                <div>
+                <div className='text-start m-1 w-100'>
                   <h1>
                     {item.name} [{item.varient}]
                   </h1>
@@ -20,13 +20,22 @@ function CartPage() {
                     Price:{item.price}*{item.prices[0][item.varient]}=
                     {item.price}
                   </h1>
-                  <h1>Quantity: </h1>
-                  <i class='fa-solid fa-plus'></i>
+                  <h1 style={{ display: 'inline' }}>Quantity: </h1>
+                  <i className='fa-solid fa-plus'></i>
                   <b>{item.quantity}</b>
-                  <i class='fa-solid fa-minus'></i>
+                  <i className='fa-solid fa-minus'></i>
+                  <hr />
                 </div>
-                <div></div>
-                <div></div>
+                <div className='m-1 w-100'>
+                  <img
+                    src={item.image}
+                    style={{ height: '80px', width: '80px' }}
+                    alt=''
+                  />
+                </div>
+                <div className='m-1 w-100'>
+                  <i className='mt-5 fa-solid fa-trash'></i>
+                </div>
               </div>
             );
           })}
