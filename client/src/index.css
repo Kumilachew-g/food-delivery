@@ -65,3 +65,17 @@ html {
   transition: 0.5s;
   cursor: pointer;
 }
+
+.fa-plus {
+  color: green;
+  margin: 5px;
+}
+
+.fa-minus {
+  color: red !important;
+  margin: 5px;
+}
+
+.fa-trash {
+  color: red !important;
+}
