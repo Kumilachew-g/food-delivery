@@ -1,8 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/actions/cartActions';
 function CartPage() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
+  const dispatch = useDispatch();
   return (
     <div>
       <div className='row justify-content-center'>
@@ -21,9 +23,23 @@ function CartPage() {
                     {item.price}
                   </h1>
                   <h1 style={{ display: 'inline' }}>Quantity: </h1>
-                  <i className='fa-solid fa-plus'></i>
+                  <i
+                    className='fa-solid fa-plus'
+                    onClick={() => {
+                      dispatch(
+                        addToCart(item, item.quantity + 1, item.varient)
+                      );
+                    }}
+                  ></i>
                   <b>{item.quantity}</b>
-                  <i className='fa-solid fa-minus'></i>
+                  <i
+                    className='fa-solid fa-minus'
+                    onClick={() => {
+                      dispatch(
+                        addToCart(item, item.quantity - 1, item.varient)
+                      );
+                    }}
+                  ></i>
                   <hr />
                 </div>
                 <div className='m-1 w-100'>
