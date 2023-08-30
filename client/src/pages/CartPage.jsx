@@ -32,7 +32,14 @@ function CartPage() {
                     }}
                   ></i>
                   <b>{item.quantity}</b>
-                  <i className='fa-solid fa-minus'></i>
+                  <i
+                    className='fa-solid fa-minus'
+                    onClick={() => {
+                      dispatch(
+                        addToCart(item, item.quantity - 1, item.varient)
+                      );
+                    }}
+                  ></i>
                   <hr />
                 </div>
                 <div className='m-1 w-100'>
