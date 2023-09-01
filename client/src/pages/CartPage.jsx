@@ -62,8 +62,9 @@ function CartPage() {
             );
           })}
         </div>
-        <div className='col-md-4'>
+        <div className='col-md-4 text-end'>
           <h2 style={{ fontSize: '40px' }}>Subtotal: {subtotal} /Birr-</h2>
+          <button className='btn'>CHECK OUT</button>
         </div>
       </div>
     </div>
