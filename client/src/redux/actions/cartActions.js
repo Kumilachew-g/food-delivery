@@ -8,8 +8,14 @@ export const addToCart = (food, quantity, varient) => (dispatch, getState) => {
     prices: food.prices,
     price: food.prices[0][varient] * quantity,
   };
+  if (cartItem.quantity > 10) {
+    alert('You cannot add more than 10 quantities');
+  } else if (cartItem.quantity < 0) {
+    dispatch({ type: 'DELETE_CART_ITEM', payload: food });
+  } else {
+    dispatch({ type: 'ADD_TO_CART', payload: cartItem });
+  }
 
-  dispatch({ type: 'ADD_TO_CART', payload: cartItem });
   const cartItems = getState().cartReducer.cartItems;
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
