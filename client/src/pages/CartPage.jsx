@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../redux/actions/cartActions';
+import { addToCart, deleteCartItem } from '../redux/actions/cartActions';
 function CartPage() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
@@ -50,7 +50,12 @@ function CartPage() {
                   />
                 </div>
                 <div className='m-1 w-100'>
-                  <i className='mt-5 fa-solid fa-trash'></i>
+                  <i
+                    className='mt-5 fa-solid fa-trash'
+                    onClick={() => {
+                      dispatch(deleteCartItem(item));
+                    }}
+                  ></i>
                 </div>
               </div>
             );
