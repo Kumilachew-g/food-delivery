@@ -13,3 +13,7 @@ export const addToCart = (food, quantity, varient) => (dispatch, getState) => {
   const cartItems = getState().cartReducer.cartItems;
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
+
+export const deleteCartItem = (food) => (dispatch) => {
+  dispatch({ type: 'DELETE_CART_ITEM', payload: food });
+};
