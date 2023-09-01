@@ -4,6 +4,7 @@ import { addToCart, deleteCartItem } from '../redux/actions/cartActions';
 function CartPage() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
+  const subtotal = cartItems.reduce((x, item) => x + item.price, 0);
   const dispatch = useDispatch();
   return (
     <div>
@@ -61,7 +62,10 @@ function CartPage() {
             );
           })}
         </div>
-        <div className='col-md-4'></div>
+        <div className='col-md-4 text-end'>
+          <h2 style={{ fontSize: '40px' }}>Subtotal: {subtotal} /Birr-</h2>
+          <button className='btn'>CHECK OUT</button>
+        </div>
       </div>
     </div>
   );
