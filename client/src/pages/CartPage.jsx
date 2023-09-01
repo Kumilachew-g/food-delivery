@@ -11,9 +11,9 @@ function CartPage() {
         <div className='col-md-6'>
           <h2 style={{ fontSize: '30px' }}>My Cart</h2>
 
-          {cartItems.map((item) => {
+          {cartItems.map((item, i) => {
             return (
-              <div className='flex-container'>
+              <div className='flex-container' key={i}>
                 <div className='text-start m-1 w-100'>
                   <h1>
                     {item.name} [{item.varient}]
