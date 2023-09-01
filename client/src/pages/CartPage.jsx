@@ -63,7 +63,7 @@ function CartPage() {
           })}
         </div>
         <div className='col-md-4'>
-          <h2>Subtotal: {subtotal} /Birr-</h2>
+          <h2 style={{ fontSize: '40px' }}>Subtotal: {subtotal} /Birr-</h2>
         </div>
       </div>
     </div>
