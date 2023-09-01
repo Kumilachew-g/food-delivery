@@ -10,7 +10,7 @@ export const addToCart = (food, quantity, varient) => (dispatch, getState) => {
   };
   if (cartItem.quantity > 10) {
     alert('You cannot add more than 10 quantities');
-  } else if (cartItem.quantity < 0) {
+  } else if (cartItem.quantity < 1) {
     dispatch({ type: 'DELETE_CART_ITEM', payload: food });
   } else {
     dispatch({ type: 'ADD_TO_CART', payload: cartItem });
