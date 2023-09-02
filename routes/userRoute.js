@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../models/userModel');
 
 router.post('/register', (req, res) => {
   // Handle register
@@ -15,7 +15,7 @@ router.post('/register', (req, res) => {
     newUser.save();
     res.send('User registered successfully');
   } catch (error) {
-    return res.status(400).send('Error while registering user');
+    return res.status(400).json({ message: error });
   }
 });
 
