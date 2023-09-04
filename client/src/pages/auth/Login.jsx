@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/actions/userActions';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const loginState = useSelector((state) => state.loginUserReducer);
+  const { loading, error } = loginState;
 
   const dispatch = useDispatch();
 
@@ -26,6 +30,10 @@ function Login() {
           <h2 className='text-center m-2' style={{ fontSize: '35px' }}>
             Login
           </h2>
+
+          {loading && <Loading />}
+          {error && <Error error='Invalid Credentials' />}
+
           <div>
             <input
               required
