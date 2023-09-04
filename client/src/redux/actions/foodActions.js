@@ -7,6 +7,6 @@ export const getAllFood = () => async (dispatch) => {
     console.log(response);
     dispatch({ type: 'GET_FOODS_SUCCESS', payload: response.data });
   } catch (error) {
-    dispatch({ type: 'GET_FOODS_FAILURE', payload: error });
+    dispatch({ type: 'GET_FOODS_FAILED', payload: error });
   }
 };
