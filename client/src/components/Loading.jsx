@@ -2,7 +2,7 @@ import React from 'react';
 
 function Loading() {
   return (
-    <div>
+    <div className='text-center'>
       <div
         className='spinner-border'
         role='status'
