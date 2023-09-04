@@ -3,6 +3,7 @@ import Food from '../components/Food';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllFood } from '../redux/actions/foodActions';
 import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function HomePage() {
         {loading ? (
           <Loading />
         ) : error ? (
-          <h1>Something went wrong</h1>
+          <Error error='Some thing went wrong' />
         ) : (
           foods.map((food, i) => {
             return (
