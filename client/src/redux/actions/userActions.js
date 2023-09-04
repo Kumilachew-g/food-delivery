@@ -28,6 +28,9 @@ export const loginUser = (user) => async (dispatch) => {
 
     // Save user info in local storage
     localStorage.setItem('currentUser', JSON.stringify(response.data));
+
+    // Redirect user to home page
+    window.location.href = '/';
   } catch (error) {
     // If login fails, dispatch error
     dispatch({ type: 'USER_LOGIN_FAILED', payload: error });
