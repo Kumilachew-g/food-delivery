@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Navbar() {
   const cartState = useSelector((state) => state.cartReducer);
+  const userState = useSelector((state) => state.loginUserReducer);
+  const { currentUser } = userState;
   return (
     <div>
       <nav className='navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-body rounded'>
@@ -27,11 +29,15 @@ function Navbar() {
           </button>
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ms-auto'>
-              <li className='nav-item'>
-                <a className='nav-link' aria-current='page' href='/login'>
-                  Login
-                </a>
-              </li>
+              {currentUser ? (
+                <li>{currentUser.name}</li>
+              ) : (
+                <li className='nav-item'>
+                  <a className='nav-link' aria-current='page' href='/login'>
+                    Login
+                  </a>
+                </li>
+              )}
               <li className='nav-item'>
                 <a className='nav-link' href='/cart'>
                   Cart {cartState.cartItems.length}
