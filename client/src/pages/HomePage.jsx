@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import Food from '../components/Food';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllFood } from '../redux/actions/foodActions';
+import Loading from '../components/Loading';
 
 function HomePage() {
   const dispatch = useDispatch();
-  const foodsstate = useSelector((state) => state.getAllFoodsReducer);
-  const { foods, loading, error } = foodsstate;
+  const foodsState = useSelector((state) => state.getAllFoodsReducer);
+  const { foods, loading, error } = foodsState;
 
   useEffect(() => {
     dispatch(getAllFood());
@@ -15,7 +16,7 @@ function HomePage() {
     <div>
       <div className='row justify-content-center'>
         {loading ? (
-          <h1>Loading...</h1>
+          <Loading />
         ) : error ? (
           <h1>Something went wrong</h1>
         ) : (
