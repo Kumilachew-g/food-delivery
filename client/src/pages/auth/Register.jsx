@@ -26,7 +26,7 @@ function Register() {
   return (
     <div>
       <div className='row justify-content-center mt-5'>
-        <div className='col-md-5 mt-5 text-start'>
+        <div className='col-md-5 mt-5 text-start shadow-lg p-3 mb-5 bg-white rounded'>
           <h2 className='text-center m-2' style={{ fontSize: '35px' }}>
             Register
           </h2>
@@ -63,9 +63,13 @@ function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <button onClick={register} className='btn mt-3'>
+            <button onClick={register} className='btn mt-3 mb-3'>
               REGISTER
             </button>
+            <br />
+            <a style={{ color: 'black' }} href='/login'>
+              Click Here To Login
+            </a>
           </div>
         </div>
       </div>
