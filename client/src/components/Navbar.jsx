@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -30,7 +31,30 @@ function Navbar() {
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ms-auto'>
               {currentUser ? (
-                <li>{currentUser.name}</li>
+                <div class='dropdown mt-2'>
+                  <a
+                    style={{ color: 'black' }}
+                    className='dropdown-toggle'
+                    type='button'
+                    id='dropdownMenuButton'
+                    data-toggle='dropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'
+                  >
+                    {currentUser.name}
+                  </a>
+                  <div
+                    class='dropdown-menu'
+                    aria-labelledby='dropdownMenuButton'
+                  >
+                    <a className='dropdown-item' href='#'>
+                      Orders
+                    </a>
+                    <a className='dropdown-item' href='#'>
+                      Logout
+                    </a>
+                  </div>
+                </div>
               ) : (
                 <li className='nav-item'>
                   <a className='nav-link' aria-current='page' href='/login'>
