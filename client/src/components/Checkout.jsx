@@ -1,11 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
-
-function handleToken(token, addresses) {
-  console.log({ token, addresses });
-}
+import { placeOrder } from '../redux/actions/orderActions';
 
 function Checkout({ subtotal }) {
+  const dispatch = useDispatch();
+  function handleToken(token) {
+    console.log({ token });
+    dispatch(placeOrder(token, subtotal));
+  }
+
   return (
     <div>
       <StripeCheckout
