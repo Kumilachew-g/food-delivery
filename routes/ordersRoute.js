@@ -15,6 +15,13 @@ router.post('/placeorder', (req, res) => {
       email: token.email,
       source: token.id,
     });
+
+    const payment = stripe.charges.create({
+      amount: subtotal * 100,
+      currency: 'usd',
+      customer: customer.id,
+      receipt_email: token.email,
+    });
   } catch (error) {}
 });
 
