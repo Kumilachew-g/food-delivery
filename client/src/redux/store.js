@@ -10,6 +10,7 @@ import { getAllFoodsReducer } from './reducers/foodReducers';
 
 import { cartReducer } from './reducers/cartReducer';
 import { registerUserReducer, loginUserReducer } from './reducers/userReducer';
+import { placeOrderReducer } from './reducers/orderReducer';
 
 // combine all reducers
 const finalReducer = combineReducers({
@@ -17,6 +18,7 @@ const finalReducer = combineReducers({
   cartReducer: cartReducer,
   registerUserReducer: registerUserReducer,
   loginUserReducer: loginUserReducer,
+  placeOrderReducer: placeOrderReducer,
 });
 
 // save cart items to local storage
