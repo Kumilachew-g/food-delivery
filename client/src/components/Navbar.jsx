@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../redux/actions/userActions';
 
 function Navbar() {
   const cartState = useSelector((state) => state.cartReducer);
   const userState = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userState;
+  const dispatch = useDispatch();
   return (
     <div>
       <nav className='navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-body rounded'>
@@ -50,8 +52,14 @@ function Navbar() {
                     <a className='dropdown-item' href='#'>
                       Orders
                     </a>
-                    <a className='dropdown-item' href='#'>
-                      Logout
+                    <a
+                      className='dropdown-item'
+                      href='#'
+                      onClick={() => {
+                        dispatch(logoutUser());
+                      }}
+                    >
+                      <li>Logout</li>
                     </a>
                   </div>
                 </div>
