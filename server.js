@@ -8,7 +8,7 @@ app.use(express.json());
 
 const foodRouter = require('./routes/foodRoute');
 const userRouter = require('./routes/userRoute');
-const orderRouter = require('./routes/orderRoute');
+const orderRouter = require('./routes/ordersRoute');
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
