@@ -16,12 +16,15 @@ router.post('/placeorder', (req, res) => {
       source: token.id,
     });
 
-    const payment = stripe.charges.create({
-      amount: subtotal * 100,
-      currency: 'usd',
-      customer: customer.id,
-      receipt_email: token.email,
-    });
+    const payment = stripe.charges.create(
+      {
+        amount: subtotal * 100,
+        currency: 'usd',
+        customer: customer.id,
+        receipt_email: token.email,
+      },
+      { idempotencyKey: uuidv4() }
+    );
   } catch (error) {}
 });
 
