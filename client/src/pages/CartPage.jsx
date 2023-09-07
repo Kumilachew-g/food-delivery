@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, deleteCartItem } from '../redux/actions/cartActions';
+import Checkout from '../components/Checkout';
 function CartPage() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
@@ -64,7 +65,7 @@ function CartPage() {
         </div>
         <div className='col-md-4 text-end'>
           <h2 style={{ fontSize: '40px' }}>Subtotal: {subtotal} /Birr-</h2>
-          <button className='btn'>CHECK OUT</button>
+          <Checkout subtotal={subtotal} />
         </div>
       </div>
     </div>
