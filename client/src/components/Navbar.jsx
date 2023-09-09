@@ -33,7 +33,7 @@ function Navbar() {
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ms-auto'>
               {currentUser ? (
-                <div class='dropdown mt-2'>
+                <div className='dropdown mt-2'>
                   <a
                     style={{ color: 'black' }}
                     className='dropdown-toggle'
@@ -46,7 +46,7 @@ function Navbar() {
                     {currentUser.name}
                   </a>
                   <div
-                    class='dropdown-menu'
+                    className='dropdown-menu'
                     aria-labelledby='dropdownMenuButton'
                   >
                     <a className='dropdown-item' href='#'>
