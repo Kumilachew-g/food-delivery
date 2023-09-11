@@ -32,7 +32,7 @@ export const getUserOrders = () => async (dispatch, getState) => {
   const currentUser = getState().loginUserReducer.currentUser;
   dispatch({ type: 'GET_USER_ORDERS_REQUEST' });
   try {
-    const response = await axios.get('/api/orders/getuserorders', {
+    const response = await axios.post('/api/orders/getuserorders', {
       userId: currentUser._id,
     });
     console.log(response);

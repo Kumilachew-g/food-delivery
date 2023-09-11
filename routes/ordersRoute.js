@@ -51,7 +51,8 @@ router.post('/placeorder', async (req, res) => {
   }
 });
 
-router.get('/getuserorders', async (req, res) => {
+// Get user order details
+router.post('/getuserorders', async (req, res) => {
   const { userId } = req.body;
   try {
     const order = await Order.find({
