@@ -33,10 +33,10 @@ function OrdersPage() {
                         <div>
                           <h2 style={{ fontSize: '25px' }}>Items</h2>
                           <hr />
-                          <h1>
+                          <p>
                             {item.name} [{item.varient}] * {item.quantity}=
                             {item.price}
-                          </h1>
+                          </p>
                         </div>
                       );
                     })}
@@ -44,18 +44,18 @@ function OrdersPage() {
                   <div className='text-start w-100 m-1'>
                     <h2 style={{ fontSize: '25px' }}>Address</h2>
                     <hr />
-                    <h1>Street:{order.shippingAddress.street}</h1>
-                    <h1>City:{order.shippingAddress.city}</h1>
-                    <h1>Country:{order.shippingAddress.country}</h1>
-                    <h1>PinCode:{order.shippingAddress.pinCode}</h1>
+                    <p>Street: {order.shippingAddress.street}</p>
+                    <p>City: {order.shippingAddress.city}</p>
+                    <p>Country: {order.shippingAddress.country}</p>
+                    <p>PinCode: {order.shippingAddress.pinCode}</p>
                   </div>
                   <div className='text-start w-100 m-1'>
                     <h2 style={{ fontSize: '25px' }}>Order Info</h2>
                     <hr />
-                    <h1>Order Amount: {order.orderAmount}</h1>
-                    <h1>Date: {order.createdAt.substring(0, 10)}</h1>
-                    <h1>Transaction ID: {order.transactionId}</h1>
-                    <h1>Order ID: {order._id}</h1>
+                    <p>Order Amount: {order.orderAmount}</p>
+                    <p>Date: {order.createdAt.substring(0, 10)}</p>
+                    <p>Transaction ID: {order.transactionId}</p>
+                    <p>Order ID: {order._id}</p>
                   </div>
                 </div>
               </div>
