@@ -7,8 +7,8 @@ import Success from '../components/Success';
 import Error from '../components/Error';
 
 function Checkout({ subtotal }) {
-  const orderStatus = useSelector((state) => state.placeOrderReducer);
-  const { loading, error, success } = orderStatus;
+  const orderState = useSelector((state) => state.placeOrderReducer);
+  const { loading, error, success } = orderState;
   const dispatch = useDispatch();
   function handleToken(token) {
     console.log({ token });
