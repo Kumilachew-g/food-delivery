@@ -20,17 +20,18 @@ function OrdersPage() {
         {loading && <Loading />}
         {error && <Error error='Some thing went wrong' />}
         {orders &&
-          orders.map((order) => {
+          orders.map((order, i) => {
             return (
               <div
+                key={i}
                 className='col-md-8 m-2 p-1'
                 style={{ backgroundColor: 'red', color: 'white' }}
               >
                 <div className='flex-container'>
                   <div className='text-start w-100 m-1'>
-                    {order.orderItems.map((item) => {
+                    {order.orderItems.map((item, i) => {
                       return (
-                        <div>
+                        <div key={i}>
                           <h2 style={{ fontSize: '25px' }}>Items</h2>
                           <hr />
                           <p>
