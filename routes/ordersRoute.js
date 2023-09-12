@@ -57,7 +57,7 @@ router.post('/getuserorders', async (req, res) => {
   try {
     const orders = await Order.find({
       userId: userId,
-    });
+    }).sort({ createdAt: -1 });
     res.send(orders);
   } catch (error) {
     res.status(404).json({ message: 'Something went wrong' });
