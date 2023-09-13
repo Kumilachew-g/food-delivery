@@ -20,7 +20,7 @@ export const filterFood = (searchKey, category) => async (dispatch) => {
     const response = await axios.get('/api/foods/getallfoods');
     console.log(response);
 
-    //  filter foods by name
+    //  search foods by name
     filteredFoods = response.data.filter((food) =>
       food.name.toLowerCase().includes(searchKey.toLowerCase())
     );
