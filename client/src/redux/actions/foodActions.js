@@ -13,16 +13,17 @@ export const getAllFood = () => async (dispatch) => {
 
 //
 
-export const filterFood = (searchKey, categoryKey) => async (dispatch) => {
+export const filterFood = (searchKey, category) => async (dispatch) => {
   var filteredFoods;
   dispatch({ type: 'GET_FOODS_REQUEST' });
   try {
     const response = await axios.get('/api/foods/getallfoods');
     console.log(response);
+    //  filter foods by name
     filteredFoods = response.data.filter((food) =>
-      food.name.toLowerCase().includes(searchKey)
+      food.name.toLowerCase().includes(searchKey.toLowerCase())
     );
-    dispatch({ type: 'GET_FOODS_SUCCESS', payload: response.data });
+    dispatch({ type: 'GET_FOODS_SUCCESS', payload: filteredFoods });
   } catch (error) {
     dispatch({ type: 'GET_FOODS_FAILED', payload: error });
   }
