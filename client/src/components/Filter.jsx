@@ -29,8 +29,10 @@ function Filter() {
             className='form-control w-100 mt-2'
           >
             <option value='all'>All</option>
-            <option value='yetsom'>Yetsom</option>
-            <option value='yefsik'>Yefsik</option>
+            <option value='siga'>Siga</option>
+            <option value='tegabino'>Tegabino</option>
+            <option value='kurt'>Kurt</option>
+            <option value='beyaynetu'>Beyaynetu</option>
           </select>
         </div>
         <div className='col-md-3'>
