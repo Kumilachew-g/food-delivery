@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllFood } from '../redux/actions/foodActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+import Filter from '../components/Filter';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function HomePage() {
   }, [dispatch]);
   return (
     <div>
+      <Filter />
       <div className='row justify-content-center'>
         {loading ? (
           <Loading />
