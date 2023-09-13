@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Filter() {
   const dispatch = useDispatch();
+  const [searchKey, setSearchKey] = useState('');
+  const [category, setCategory] = useState('all');
   return (
     <div className='container'>
       <div className='row justify-content-center shadow-lg p-3 mb-5 bg-white rounded'>
