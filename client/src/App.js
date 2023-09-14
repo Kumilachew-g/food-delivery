@@ -21,7 +21,7 @@ function App() {
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
           <Route path='/orders' exact element={<OrdersPage />} />
-          <Route path='/admin' element={<AdminPage />} />
+          <Route path='/admin/*' element={<AdminPage />} />
         </Routes>
       </Router>
     </div>
