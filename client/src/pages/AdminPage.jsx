@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import UsersList from './UsersList';
 import FoodList from './FoodList';
 import AddFood from './AddFood';
@@ -24,16 +24,16 @@ function AdminPage() {
           <h2 style={{ fontSize: '35px' }}>Admin panel</h2>
           <ul className='admin-functions'>
             <li>
-              <a href='/admin/userslist'>Users List</a>
+              <Link to='/admin/userslist'>Users List</Link>
             </li>
             <li>
-              <a href='/admin/foodlist'>Food List</a>
+              <Link to='/admin/foodlist'>Food List</Link>
             </li>
             <li>
-              <a href='/admin/addfood'>Add new food</a>
+              <Link to='/admin/addfood'>Add new food</Link>
             </li>
             <li>
-              <a href='/admin/orderslist'>Orders List</a>
+              <Link to='/admin/orderslist'>Orders List</Link>
             </li>
           </ul>
           <Routes>
