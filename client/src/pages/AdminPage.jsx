@@ -37,6 +37,7 @@ function AdminPage() {
             </li>
           </ul>
           <Routes>
+            <Route path='/' element={<UsersList />} exact />
             <Route path='userslist' element={<UsersList />} exact />
             <Route path='foodlist' element={<FoodList />} exact />
             <Route path='addfood' element={<AddFood />} exact />
