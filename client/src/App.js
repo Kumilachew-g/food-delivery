@@ -8,6 +8,7 @@ import CartPage from './pages/CartPage';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import OrdersPage from './pages/OrdersPage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/orders' element={<OrdersPage />} />
+          <Route path='/admin' element={<AdminPage />} />
         </Routes>
       </Router>
     </div>
