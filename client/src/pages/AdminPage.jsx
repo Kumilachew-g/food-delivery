@@ -15,6 +15,20 @@ function AdminPage() {
   return (
     <div>
       <h2 style={{ fontSize: '35px' }}>Admin panel</h2>
+      <ul className='admin-functions'>
+        <li>
+          <a href=''>Users List</a>
+        </li>
+        <li>
+          <a href=''>Food List</a>
+        </li>
+        <li>
+          <a href=''>Add new food</a>
+        </li>
+        <li>
+          <a href=''>Orders List</a>
+        </li>
+      </ul>
     </div>
   );
 }
