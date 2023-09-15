@@ -92,3 +92,19 @@ a {
 /* .alert {
   width: 250px;
 } */
+
+.admin-functions {
+  padding: 10px;
+  background-color: #01014d;
+}
+
+.admin-functions li {
+  list-style-type: none !important;
+  display: inline !important;
+  color: white !important;
+}
+
+.admin-functions li a {
+  color: white !important;
+  padding: 20px;
+}
