@@ -30,9 +30,9 @@ function FoodList() {
         </thead>
         <tbody>
           {foods &&
-            foods.map((food) => {
+            foods.map((food, i) => {
               return (
-                <tr>
+                <tr key={i}>
                   <td>{food.name}</td>
                   <td>
                     Small: {food.prices[0]['small']} <br />
