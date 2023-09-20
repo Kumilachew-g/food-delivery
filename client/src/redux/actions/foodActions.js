@@ -40,12 +40,12 @@ export const filterFood = (searchKey, category) => async (dispatch) => {
 
 //  add food action
 
-export const addFood = (food) => (dispatch) => {
+export const addFood = (food) => async (dispatch) => {
   dispatch({ type: 'ADD_FOOD_REQUEST' });
   try {
-    const response = axios.post('/api/foods/addfood', { food });
-    dispatch({ type: 'ADD_FOOD_SUCCESS' });
+    const response = await axios.post('/api/foods/addfood', { food });
     console.log(response);
+    dispatch({ type: 'ADD_FOOD_SUCCESS' });
   } catch (error) {
     dispatch({ type: 'ADD_FOOD_FAILED', payload: error });
   }
