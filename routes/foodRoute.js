@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const food = require('../models/foodModel');
+const Food = require('../models/foodModel');
 
 router.get('/getallfoods', async (req, res) => {
   try {
-    const foods = await food.find({});
+    const foods = await Food.find({});
     res.send(foods);
   } catch (error) {
     return res.status(400).json({ message: error.message });
@@ -18,13 +18,13 @@ router.post('/addfood', async (req, res) => {
   const food = req.body.food;
 
   try {
-    const newFood = new food({
+    const newFood = new Food({
       name: food.name,
       image: food.image,
-      varient: ['small', 'medium', 'large'],
+      varients: ['small', 'medium', 'large'],
       description: food.description,
       category: food.category,
-      price: [food.prices],
+      prices: [food.prices],
     });
     await newFood.save();
     res.send('New food added successfully');
