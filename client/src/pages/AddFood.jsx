@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addFood } from '../redux/actions/foodActions';
 
 function AddFood() {
   const [name, setName] = useState('');
@@ -8,6 +10,7 @@ function AddFood() {
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
 
   function formHandler(e) {
     e.preventDefault();
@@ -25,6 +28,7 @@ function AddFood() {
     };
 
     console.log(food);
+    dispatch(addFood(food));
   }
   return (
     <div>
