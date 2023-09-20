@@ -19,8 +19,8 @@ function FoodList() {
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
 
-      <table className='table'>
-        <thead>
+      <table className='table table-bordered'>
+        <thead className='table-dark'>
           <tr>
             <th>Name</th>
             <th>Prices</th>
@@ -40,6 +40,10 @@ function FoodList() {
                     Large: {food.prices[0]['large']}
                   </td>
                   <td>{food.category}</td>
+                  <td>
+                    <i className='fa fa-trash m-1'></i>
+                    <i className='fa fa-edit m-1'></i>
+                  </td>
                 </tr>
               );
             })}
