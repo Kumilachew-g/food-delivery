@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFood } from '../redux/actions/foodActions';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
+import Success from '../components/Success';
 
 function AddFood() {
   const [name, setName] = useState('');
@@ -8,6 +13,11 @@ function AddFood() {
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+
+  const dispatch = useDispatch();
+
+  const addFoodState = useSelector((state) => state.addFoodReducer);
+  const { loading, error, success } = addFoodState;
 
   function formHandler(e) {
     e.preventDefault();
@@ -25,11 +35,15 @@ function AddFood() {
     };
 
     console.log(food);
+    dispatch(addFood(food));
   }
   return (
     <div>
       <div className='text-start'>
         <h2>Add food</h2>
+        {loading && <Loading />}
+        {error && <Error error='Something went wrong' />}
+        {success && <Success success='Food added successfully' />}
         <form onSubmit={formHandler}>
           <input
             className='form-control'
