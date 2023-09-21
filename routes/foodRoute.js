@@ -33,4 +33,15 @@ router.post('/addfood', async (req, res) => {
   }
 });
 
+router.post('/getfoodbyid', async (req, res) => {
+  const foodId = req.body.foodId;
+
+  try {
+    const food = await Food.findOne({ _id: foodId });
+    res.send(food);
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+});
+
 module.exports = router;
