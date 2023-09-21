@@ -5,6 +5,7 @@ import UsersList from './UsersList';
 import FoodList from './FoodList';
 import AddFood from './AddFood';
 import OrdersList from './OrdersList';
+import EditFood from './EditFood';
 
 function AdminPage() {
   const userState = useSelector((state) => state.loginUserReducer);
@@ -35,6 +36,9 @@ function AdminPage() {
             <li>
               <Link to='/admin/orderslist'>Orders List</Link>
             </li>
+            <li>
+              <Link to='/admin/editfood'></Link>
+            </li>
           </ul>
           <Routes>
             <Route path='/' element={<UsersList />} exact />
@@ -42,6 +46,7 @@ function AdminPage() {
             <Route path='foodlist' element={<FoodList />} exact />
             <Route path='addfood' element={<AddFood />} exact />
             <Route path='orderslist' element={<OrdersList />} exact />
+            <Route path='editfood/:foodid' element={<EditFood />} />
           </Routes>
         </div>
       </div>
