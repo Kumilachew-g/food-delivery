@@ -11,6 +11,17 @@ export const getAllFood = () => async (dispatch) => {
   }
 };
 
+export const getFoodById = () => async (dispatch) => {
+  dispatch({ type: 'GET_FOOD_BY_ID_REQUEST' });
+  try {
+    const response = await axios.get('/api/foods/getfoodbyid');
+    console.log(response);
+    dispatch({ type: 'GET_FOOD_BY_ID_SUCCESS', payload: response.data });
+  } catch (error) {
+    dispatch({ type: 'GET_FOOD_BY_ID_FAILED', payload: error });
+  }
+};
+
 //
 
 export const filterFood = (searchKey, category) => async (dispatch) => {
