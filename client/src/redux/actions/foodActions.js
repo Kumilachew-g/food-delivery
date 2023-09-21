@@ -11,10 +11,10 @@ export const getAllFood = () => async (dispatch) => {
   }
 };
 
-export const getFoodById = () => async (dispatch) => {
+export const getFoodById = (foodId) => async (dispatch) => {
   dispatch({ type: 'GET_FOOD_BY_ID_REQUEST' });
   try {
-    const response = await axios.get('/api/foods/getfoodbyid');
+    const response = await axios.post('/api/foods/getfoodbyid', { foodId });
     console.log(response);
     dispatch({ type: 'GET_FOOD_BY_ID_SUCCESS', payload: response.data });
   } catch (error) {
