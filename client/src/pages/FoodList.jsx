@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { getAllFood } from '../redux/actions/foodActions';
+import { Link } from 'react-router-dom';
 
 function FoodList() {
   const dispatch = useDispatch();
@@ -42,7 +43,9 @@ function FoodList() {
                   <td>{food.category}</td>
                   <td>
                     <i className='fa fa-trash m-1'></i>
-                    <i className='fa fa-edit m-1'></i>
+                    <Link to={`/admin/editfood/${food._id}`}>
+                      <i className='fa fa-edit m-1'></i>
+                    </Link>
                   </td>
                 </tr>
               );

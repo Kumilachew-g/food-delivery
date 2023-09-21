@@ -6,7 +6,11 @@ import thunk from 'redux-thunk';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { addFoodReducer, getAllFoodsReducer } from './reducers/foodReducers';
+import {
+  addFoodReducer,
+  getAllFoodsReducer,
+  getFoodByIdReducer,
+} from './reducers/foodReducers';
 
 import { cartReducer } from './reducers/cartReducer';
 import { registerUserReducer, loginUserReducer } from './reducers/userReducer';
@@ -24,6 +28,7 @@ const finalReducer = combineReducers({
   placeOrderReducer: placeOrderReducer,
   getUserOrdersReducer: getUserOrdersReducer,
   addFoodReducer: addFoodReducer,
+  getFoodByIdReducer: getFoodByIdReducer,
 });
 
 // save cart items to local storage
