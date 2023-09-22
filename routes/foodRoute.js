@@ -44,4 +44,25 @@ router.post('/getfoodbyid', async (req, res) => {
   }
 });
 
+// Edit food routes
+router.post('/editfood', async (req, res) => {
+  const editedFood = req.body.editedFood;
+
+  try {
+    const food = await Food.findOne({ _id: editedFood._id });
+
+    food.name = editedFood.name;
+    food.description = editedFood.description;
+    food.category = editedFood.category;
+    food.image = editedFood.image;
+    food.prices = [editedFood.prices];
+
+    await food.save();
+
+    res.send('Food details updated successfully');
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+});
+
 module.exports = router;

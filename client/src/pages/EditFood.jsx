@@ -45,6 +45,7 @@ function EditFood() {
     e.preventDefault();
 
     const editedFood = {
+      _id: foodid,
       name,
       image,
       description,
@@ -57,7 +58,7 @@ function EditFood() {
     };
 
     console.log(editedFood);
-    dispatch(editFood(editFood));
+    dispatch(editFood(editedFood));
   }
 
   return (
@@ -67,6 +68,7 @@ function EditFood() {
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
       {editSuccess && <Success success='Food details edited successfully' />}
+      {editLoading && <Loading />}
 
       <div className='text-start'>
         <form onSubmit={formHandler}>
