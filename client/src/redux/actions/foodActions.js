@@ -61,3 +61,16 @@ export const addFood = (food) => async (dispatch) => {
     dispatch({ type: 'ADD_FOOD_FAILED', payload: error });
   }
 };
+
+// edit food action
+
+export const editFood = (editedFood) => async (dispatch) => {
+  dispatch({ type: 'EDIT_FOOD_REQUEST' });
+  try {
+    const response = await axios.post('/api/foods/editfood', { editedFood });
+    console.log(response);
+    dispatch({ type: 'EDIT_FOOD_SUCCESS' });
+  } catch (error) {
+    dispatch({ type: 'EDIT_FOOD_FAILED', payload: error });
+  }
+};
