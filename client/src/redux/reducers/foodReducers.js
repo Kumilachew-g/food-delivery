@@ -79,7 +79,7 @@ export const editFoodReducer = (state = {}, action) => {
     case 'EDIT_FOOD_SUCCESS':
       return {
         editLoading: false,
-        success: true,
+        editSuccess: true,
       };
     case 'EDIT_FOOD_FAILED':
       return {
