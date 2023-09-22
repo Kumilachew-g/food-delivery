@@ -69,6 +69,7 @@ function EditFood() {
       {error && <Error error='Something went wrong' />}
       {editSuccess && <Success success='Food details edited successfully' />}
       {editLoading && <Loading />}
+      {editError && <Error error='Something went wrong' />}
 
       <div className='text-start'>
         <form onSubmit={formHandler}>
