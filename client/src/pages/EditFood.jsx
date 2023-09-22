@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFoodById } from '../redux/actions/foodActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-import Success from '../components/Success';
 
 function EditFood() {
   const { foodid } = useParams();
@@ -18,14 +17,31 @@ function EditFood() {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
+  const getFoodByIdState = useSelector((state) => state.getFoodByIdReducer);
+  const { loading, error, food } = getFoodByIdState;
+
   useEffect(() => {
-    dispatch(getFoodById(foodid));
-  }, [foodid]);
+    if (food) {
+      if (food._id === foodid) {
+        setName(food.name);
+        setDescription(food.description);
+        setCategory(food.category);
+        setSmallPrice(food.prices[0]['small']);
+        setMediumPrice(food.prices[0]['medium']);
+        setLargePrice(food.prices[0]['large']);
+        setImage(food.image);
+      } else {
+        dispatch(getFoodById(foodid));
+      }
+    } else {
+      dispatch(getFoodById(foodid));
+    }
+  }, [food, dispatch, foodid]);
 
   function formHandler(e) {
     e.preventDefault();
 
-    const food = {
+    const updatedFood = {
       name,
       image,
       description,
@@ -37,7 +53,7 @@ function EditFood() {
       },
     };
 
-    console.log(food);
+    console.log(updatedFood);
     // dispatch(addFood(food));
   }
 
@@ -45,6 +61,9 @@ function EditFood() {
     <div>
       <h2>Edit Food</h2>
       <h2>Food Id = {foodid}</h2>
+      {loading && <Loading />}
+      {error && <Error error='Something went wrong' />}
+
       <div className='text-start'>
         <form onSubmit={formHandler}>
           <input
@@ -111,7 +130,7 @@ function EditFood() {
             }}
           />
           <button className='btn mt-3' type='submit'>
-            Add Food
+            Edit Food
           </button>
         </form>
       </div>
