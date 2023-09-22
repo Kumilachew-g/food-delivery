@@ -66,3 +66,27 @@ export const addFoodReducer = (state = {}, action) => {
       return state;
   }
 };
+
+// Update food reducer
+
+export const editFoodReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'EDIT_FOOD_REQUEST':
+      return {
+        editLoading: true,
+        ...state,
+      };
+    case 'EDIT_FOOD_SUCCESS':
+      return {
+        editLoading: false,
+        success: true,
+      };
+    case 'EDIT_FOOD_FAILED':
+      return {
+        editError: action.payload,
+        editLoading: false,
+      };
+    default:
+      return state;
+  }
+};
