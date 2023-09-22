@@ -7,9 +7,9 @@ import Success from '../components/Success';
 
 function AddFood() {
   const [name, setName] = useState('');
-  const [smallPrice, setSmallPrice] = useState();
-  const [mediumPrice, setMediumPrice] = useState();
-  const [largePrice, setLargePrice] = useState();
+  const [smallPrice, setSmallPrice] = useState('');
+  const [mediumPrice, setMediumPrice] = useState('');
+  const [largePrice, setLargePrice] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
