@@ -8,6 +8,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import {
   addFoodReducer,
+  editFoodReducer,
   getAllFoodsReducer,
   getFoodByIdReducer,
 } from './reducers/foodReducers';
@@ -29,6 +30,7 @@ const finalReducer = combineReducers({
   getUserOrdersReducer: getUserOrdersReducer,
   addFoodReducer: addFoodReducer,
   getFoodByIdReducer: getFoodByIdReducer,
+  editFoodReducer: editFoodReducer,
 });
 
 // save cart items to local storage
