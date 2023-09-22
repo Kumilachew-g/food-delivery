@@ -70,6 +70,7 @@ export const editFood = (editedFood) => async (dispatch) => {
     const response = await axios.post('/api/foods/editfood', { editedFood });
     console.log(response);
     dispatch({ type: 'EDIT_FOOD_SUCCESS' });
+    window.location.href = '/admin/foodlist';
   } catch (error) {
     dispatch({ type: 'EDIT_FOOD_FAILED', payload: error });
   }
