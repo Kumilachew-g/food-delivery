@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFoodById } from '../redux/actions/foodActions';
+import { editFood, getFoodById } from '../redux/actions/foodActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+import Success from '../components/Success';
 
 function EditFood() {
   const { foodid } = useParams();
@@ -19,6 +20,8 @@ function EditFood() {
 
   const getFoodByIdState = useSelector((state) => state.getFoodByIdReducer);
   const { loading, error, food } = getFoodByIdState;
+  const editFoodState = useSelector((state) => state.editFoodReducer);
+  const { editLoading, editError, editSuccess } = editFoodState;
 
   useEffect(() => {
     if (food) {
@@ -41,7 +44,7 @@ function EditFood() {
   function formHandler(e) {
     e.preventDefault();
 
-    const updatedFood = {
+    const editedFood = {
       name,
       image,
       description,
@@ -53,8 +56,8 @@ function EditFood() {
       },
     };
 
-    console.log(updatedFood);
-    // dispatch(addFood(food));
+    console.log(editedFood);
+    dispatch(editFood(editFood));
   }
 
   return (
@@ -63,6 +66,7 @@ function EditFood() {
       <h2>Food Id = {foodid}</h2>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
+      {editSuccess && <Success success='Food details edited successfully' />}
 
       <div className='text-start'>
         <form onSubmit={formHandler}>
