@@ -79,7 +79,7 @@ export const editFood = (editedFood) => async (dispatch) => {
 // delete food action
 export const deleteFood = (foodId) => async (dispatch) => {
   try {
-    const response = await axios.post('/admin/foods/deletefood', { foodId });
+    const response = await axios.post('/api/foods/deletefood', { foodId });
     alert('Are you sure you want to delete this food?');
     console.log(response);
     window.location.reload();
