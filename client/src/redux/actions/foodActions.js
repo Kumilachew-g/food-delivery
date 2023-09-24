@@ -75,3 +75,16 @@ export const editFood = (editedFood) => async (dispatch) => {
     dispatch({ type: 'EDIT_FOOD_FAILED', payload: error });
   }
 };
+
+// delete food action
+export const deleteFood = (foodId) => async (dispatch) => {
+  try {
+    const response = await axios.post('/api/foods/deletefood', { foodId });
+    alert('Are you sure you want to delete this food?');
+    console.log(response);
+    window.location.reload();
+  } catch (error) {
+    alert('Failed to delete this food');
+    console.log(error);
+  }
+};

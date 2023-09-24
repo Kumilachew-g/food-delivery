@@ -65,4 +65,15 @@ router.post('/editfood', async (req, res) => {
   }
 });
 
+// Delete food routes
+router.post('/deletefood', async (req, res) => {
+  const foodId = await req.body.foodId;
+  try {
+    await Food.findOneAndDelete({ _id: foodId });
+    res.send('Food deleted successfully');
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+});
+
 module.exports = router;
