@@ -41,3 +41,16 @@ export const getUserOrders = () => async (dispatch, getState) => {
     dispatch({ type: 'GET_USER_ORDERS_FAILED', payload: error });
   }
 };
+
+// Get all orders actions
+export const getAllOrders = () => async (dispatch, getState) => {
+  const currentUser = getState().loginUserReducer.currentUser;
+  dispatch({ type: 'GET_ALL_ORDERS_REQUEST' });
+  try {
+    const response = await axios.get('/api/orders/getallorders');
+    console.log(response);
+    dispatch({ type: 'GET_ALL_ORDERS_SUCCESS', payload: response.data });
+  } catch (error) {
+    dispatch({ type: 'GET_ALL_ORDERS_FAILED', payload: error });
+  }
+};
