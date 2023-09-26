@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions/cartActions';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
