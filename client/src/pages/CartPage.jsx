@@ -15,7 +15,7 @@ function CartPage() {
   const dispatch = useDispatch();
   return (
     <div>
-      <div className='row justify-content-center' data-aos='fade-down'>
+      <div className='row justify-content-center p-2' data-aos='fade-down'>
         <div className='col-md-6'>
           <h2 style={{ fontSize: '30px' }}>My Cart</h2>
 
