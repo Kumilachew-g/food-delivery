@@ -20,7 +20,7 @@ function AdminPage() {
 
   return (
     <div>
-      <div className='row justify-content-center'>
+      <div className='row justify-content-center p-3'>
         <div className='col-md-10'>
           <h2 style={{ fontSize: '35px' }}>Admin panel</h2>
           <ul className='admin-functions'>

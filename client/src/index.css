@@ -42,27 +42,25 @@ h1 {
   color: white !important;
 }
 
-.btn:hover {
+/* .btn:hover {
   background-color: #cf4e4e !important;
   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.3);
-}
+} */
 
 select {
   box-shadow: none !important;
   border-color: black !important;
 }
 
-html::-webkit-scrollbar {
+/* html::-webkit-scrollbar {
   display: none;
-}
+} */
 /* Remove scrollbar in firefox */
-html {
+/* html {
   scrollbar-width: none;
-}
+} */
 
 .img:hover {
-  transform: scale(1.1);
-  transition: 0.5s;
   cursor: pointer;
 }
 

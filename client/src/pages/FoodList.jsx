@@ -15,12 +15,12 @@ function FoodList() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className='table-responsive-sm'>
       <h2>Food List</h2>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
 
-      <table className='table table-bordered'>
+      <table className='table table-bordered table-responsive-sm'>
         <thead className='table-dark'>
           <tr>
             <th>Name</th>

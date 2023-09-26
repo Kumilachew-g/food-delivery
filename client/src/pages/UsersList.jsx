@@ -13,11 +13,11 @@ function UsersList() {
     dispatch(getAllUsers());
   }, [dispatch]);
   return (
-    <div>
+    <div className='table-responsive-sm'>
       <h1>Users List</h1>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
-      <table className='table table-striped table-bordered'>
+      <table className='table table-striped table-bordered table-responsive-sm'>
         <thead className='table-dark'>
           <tr>
             <th>User ID</th>
