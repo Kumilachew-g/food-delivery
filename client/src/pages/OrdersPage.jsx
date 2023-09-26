@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserOrders } from '../redux/actions/orderActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function OrdersPage() {
+  AOS.init();
   const dispatch = useDispatch();
   const orderState = useSelector((state) => state.getUserOrdersReducer);
   const { orders, error, loading } = orderState;
@@ -24,6 +27,7 @@ function OrdersPage() {
             return (
               <div
                 key={i}
+                data-aos='fade-down'
                 className='col-md-8 m-2 p-1'
                 style={{ backgroundColor: 'red', color: 'white' }}
               >
