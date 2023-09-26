@@ -25,7 +25,7 @@ function Food({ food }) {
   };
 
   return (
-    <div className='shadow-lg p-3 mb-5 bg-white rounded'>
+    <div data-aos='zoom-in' className='shadow-lg p-3 mb-5 bg-white rounded'>
       <div onClick={handleShow}>
         {' '}
         <h1>{food.name}</h1>
