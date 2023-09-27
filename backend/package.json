@@ -4,7 +4,7 @@
   "description": "A React food delivery web app is a web app that uses the React framework to create a user-friendly interface for ordering food from restaurants.",
   "main": "server.js",
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
