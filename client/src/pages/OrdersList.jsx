@@ -14,10 +14,10 @@ function OrdersList() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className='table-responsive-lg'>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
-      <table className='table table-striped table-bordered'>
+      <table className='table table-striped table-bordered table-responsive-sm'>
         <thead className='table-dark'>
           <tr>
             <th>Order ID</th>

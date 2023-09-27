@@ -1,10 +1,15 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions/cartActions';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Food({ food }) {
+  //  Initialize AOS
+  AOS.init();
+
   const [variant, setVariant] = useState('small');
   const [quantity, setQuantity] = useState(1);
 
@@ -20,7 +25,7 @@ function Food({ food }) {
   };
 
   return (
-    <div className='shadow-lg p-3 mb-5 bg-white rounded'>
+    <div data-aos='zoom-in' className='shadow-lg p-3 mb-5 bg-white rounded'>
       <div onClick={handleShow}>
         {' '}
         <h1>{food.name}</h1>

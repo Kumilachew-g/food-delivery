@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Routes, Route, Link } from 'react-router-dom';
 import UsersList from './UsersList';
 import FoodList from './FoodList';
@@ -10,7 +10,6 @@ import EditFood from './EditFood';
 function AdminPage() {
   const userState = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userState;
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!currentUser.isAdmin) {
@@ -20,7 +19,7 @@ function AdminPage() {
 
   return (
     <div>
-      <div className='row justify-content-center'>
+      <div className='row justify-content-center p-3'>
         <div className='col-md-10'>
           <h2 style={{ fontSize: '35px' }}>Admin panel</h2>
           <ul className='admin-functions'>

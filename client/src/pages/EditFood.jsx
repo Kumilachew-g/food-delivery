@@ -63,14 +63,13 @@ function EditFood() {
 
   return (
     <div>
-      <h2>Edit Food</h2>
-      <h2>Food Id = {foodid}</h2>
-      {loading && <Loading />}
-      {error && <Error error='Something went wrong' />}
-      {editSuccess && <Success success='Food details edited successfully' />}
-      {editLoading && <Loading />}
+      <div className='text-start shadow-lg p-3 mb-5 bg-body rounded'>
+        <h1>Edit Food</h1>
+        {loading && <Loading />}
+        {error && <Error error='Something went wrong' />}
+        {editSuccess && <Success success='Food details edited successfully' />}
+        {editLoading && <Loading />}
 
-      <div className='text-start'>
         <form onSubmit={formHandler}>
           <input
             className='form-control'

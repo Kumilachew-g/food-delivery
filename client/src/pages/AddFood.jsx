@@ -39,8 +39,8 @@ function AddFood() {
   }
   return (
     <div>
-      <div className='text-start'>
-        <h2>Add food</h2>
+      <div className='text-start shadow-lg p-3 mb-5 bg-body rounded'>
+        <h1>Add food</h1>
         {loading && <Loading />}
         {error && <Error error='Something went wrong' />}
         {success && <Success success='Food added successfully' />}
