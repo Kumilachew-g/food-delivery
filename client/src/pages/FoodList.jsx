@@ -20,7 +20,7 @@ function FoodList() {
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
 
-      <table className='table table-bordered table-responsive-sm'>
+      <table className='table table-striped table-bordered table-responsive-sm'>
         <thead className='table-dark'>
           <tr>
             <th>Name</th>

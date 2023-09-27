@@ -14,7 +14,7 @@ function OrdersList() {
   }, [dispatch]);
 
   return (
-    <div className='table-responsive-sm'>
+    <div className='table-responsive-lg'>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
       <table className='table table-striped table-bordered table-responsive-sm'>

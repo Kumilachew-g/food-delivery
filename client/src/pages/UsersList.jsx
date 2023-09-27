@@ -14,7 +14,7 @@ function UsersList() {
   }, [dispatch]);
   return (
     <div className='table-responsive-sm'>
-      <h1>Users List</h1>
+      <h2>Users List</h2>
       {loading && <Loading />}
       {error && <Error error='Something went wrong' />}
       <table className='table table-striped table-bordered table-responsive-sm'>
