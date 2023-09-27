@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Routes, Route, Link } from 'react-router-dom';
 import UsersList from './UsersList';
 import FoodList from './FoodList';
@@ -10,7 +10,6 @@ import EditFood from './EditFood';
 function AdminPage() {
   const userState = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userState;
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!currentUser.isAdmin) {
